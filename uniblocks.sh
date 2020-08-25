@@ -1,9 +1,4 @@
 #!/bin/sh
-#
-# Wraps all of your status bar modules into a single string
-#     that updates only the part that has changed.
-# Dependencies: mkfifo, sleep
-# Usage: uniblocks -[g,u]
 
 PANEL_FIFO=/tmp/panel_fifo2
 CONFIG=~/.config/uniblocksrc
@@ -71,7 +66,7 @@ generate() {
          read -r newstatus < /tmp/"$tag"
          status="$status $DELIMITER $newstatus"
       done
-      printf "\r%s" "$status" # Print the result
+      xsetroot -name "$status" # Print the result
    done < $PANEL_FIFO
 }
 
