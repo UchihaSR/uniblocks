@@ -2,7 +2,7 @@
 
 PANEL_FIFO=/tmp/panel_fifo2
 CONFIG=~/.config/uniblocksrc
-DELIMITER=" | "
+DELIMITER=""
 
 parse() { # Used for parsing modules into the fifo
    while IFS= read -r line; do
